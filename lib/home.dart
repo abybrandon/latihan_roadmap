@@ -15,7 +15,8 @@ class HomeView extends StatelessWidget {
           ElevatedButton(onPressed: () {}, child: Text('Rizki fungsi')),
           ElevatedButton(onPressed: () {
             Get.to(() => BimaWidget());
-          }, child: Text('Bima fungsi'))
+          }, child: Text('Bima fungsi')),
+          Text('test konflik')
         ],
       ),
     );
