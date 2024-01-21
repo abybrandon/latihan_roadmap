@@ -1,4 +1,6 @@
+import 'package:belajar_github/BimaFOlder/Bima.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -11,7 +13,9 @@ class HomeView extends StatelessWidget {
         children: [
           ElevatedButton(onPressed: () {}, child: Text('Fauzi fungsi')),
           ElevatedButton(onPressed: () {}, child: Text('Rizki fungsi')),
-          ElevatedButton(onPressed: () {}, child: Text('Bima fungsi'))
+          ElevatedButton(onPressed: () {
+            Get.to(() => BimaWidget());
+          }, child: Text('Bima fungsi'))
         ],
       ),
     );
