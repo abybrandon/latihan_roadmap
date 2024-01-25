@@ -15,9 +15,11 @@ class HomeView extends StatelessWidget {
         children: [
           ElevatedButton(onPressed: () {}, child: Text('Fauzi fungsi')),
           ElevatedButton(onPressed: () {}, child: Text('Rizki fungsi')),
-          ElevatedButton(onPressed: () {
-            Get.to(() => Login());
-          }, child: Text('Bima fungsi')),
+          ElevatedButton(
+              onPressed: () {
+                Get.to(() => Login());
+              },
+              child: Text('Bima fungsi')),
           Text('test konflik')
         ],
       ),
