@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     Get.put(ControllerRegister()); // Initialize your controller here
+    Get.put(ControllerRegister()); // Initialize your controller here
     Get.put(ControllerAbout()); // Initialize your controller here
     return const GetMaterialApp(
       home: HomeView(),
