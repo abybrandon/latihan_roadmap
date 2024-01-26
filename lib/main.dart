@@ -1,3 +1,5 @@
+import 'package:belajar_github/Bima/Controller/ControllerAbout.dart';
+import 'package:belajar_github/Bima/Controller/ControllerRegister.dart';
 import 'package:belajar_github/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,8 +13,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
+    Get.put(ControllerRegister()); // Initialize your controller here
+    Get.put(ControllerAbout()); // Initialize your controller here
+    return const GetMaterialApp(
       home: HomeView(),
     );
   }
