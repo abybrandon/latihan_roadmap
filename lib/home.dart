@@ -28,7 +28,7 @@ class HomeView extends StatelessWidget {
                 onPressed: () {
                   Get.to(() => LoginView());
                 },
-                child: Text('Abi fungsi asdasdasganteng'))
+                child: Text('Abi fungsi asdasdasdas'))
           ],
         ),
       ),
