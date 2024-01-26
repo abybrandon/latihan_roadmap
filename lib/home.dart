@@ -13,17 +13,24 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        children: [
-          ElevatedButton(onPressed: () {}, child: Text('Fauzi fungsi')),
-          ElevatedButton(onPressed: () {}, child: Text('Rizki fungsi')),
-          ElevatedButton(
-              onPressed: () {
-                Get.to(() => Login());
-              },
-              child: Text('Bima fungsi')),
-          Text('test konflik')
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(onPressed: () {}, child: Text('Fsadasauzi fungsi')),
+            ElevatedButton(onPressed: () {}, child: Text('Rizki fungsi')),
+            ElevatedButton(
+                onPressed: () {
+                  Get.to(() => BimaWidget());
+                },
+                child: Text('Bima  dsaas fungsi')),
+            ElevatedButton(
+                onPressed: () {
+                  Get.to(() => LoginView());
+                },
+                child: Text('Abi fungsi ganteng'))
+          ],
+        ),
       ),
     );
   }
