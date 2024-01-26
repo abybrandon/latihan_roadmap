@@ -1,4 +1,4 @@
-import 'package:belajar_github/home.dart';
+import 'package:belajar_github/rizki/view/view_home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       home: HomeView(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
