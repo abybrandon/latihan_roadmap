@@ -23,7 +23,7 @@ class HomeView extends StatelessWidget {
                 onPressed: () {
                   Get.to(() => BimaWidget());
                 },
-                child: Text('Bima  dsaas fungsi')),
+                child: Text('Bima  dsaas fungsiasdas')),
             ElevatedButton(
                 onPressed: () {
                   Get.to(() => LoginView());
