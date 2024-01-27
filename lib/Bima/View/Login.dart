@@ -8,6 +8,8 @@ import 'package:belajar_github/Bima/Widget/WidgetUi.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+part 'login_form.dart';
+
 class Login extends StatefulWidget {
   const Login({super.key});
 
@@ -16,19 +18,15 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-
-  bool _obscureText = true;
+  final controller = Get.find<ControllerRegister>();
 
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
 
-
-  final controller = Get.find<ControllerRegister>();
+  bool _obscureText = true;
 
   @override
   Widget build(BuildContext context) {
-    email.text =  'bima@gmail.com';
-    password.text = '123456';
     return Scaffold(
       //background: radial-gradient(121.73% 121.49% at 100% -3.39%, #1F4247 0%, #0D1D23 56.18%, #09141A 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
       body: Stack(
@@ -83,29 +81,32 @@ class _LoginState extends State<Login> {
                 const SizedBox(
                   height: 30,
                 ),
-              WIdgetUI.WidgetRegisterTetxt(
-                    'Enter Email', email),
+                WIdgetUI.WidgetRegisterTetxt('Enter Email', email),
                 const SizedBox(
                   height: 20,
                 ),
                 WIdgetUI.Password(
-                  IconButton(
-                  onPressed: () {
-                    setState(() {
-                      _obscureText = !_obscureText;
-                    });
-                  },
-                  icon: Icon(
-                      _obscureText ? Icons.visibility : Icons.visibility_off),
-                ), _obscureText, 'Enter Password', password),
+                    IconButton(
+                      onPressed: () {
+                        setState(() {
+                          _obscureText = !_obscureText;
+                        });
+                      },
+                      icon: Icon(_obscureText
+                          ? Icons.visibility
+                          : Icons.visibility_off),
+                    ),
+                    _obscureText,
+                    'Enter Password',
+                    password),
                 const SizedBox(
                   height: 20,
                 ),
                 InkWell(
-                  onTap: () {
-                    controller.Login(email, password, context);
-                  },
-                  child: WIdgetUI.getLoginButton(context, 'Login')),
+                    onTap: () {
+                      controller.Login(email, password, context);
+                    },
+                    child: WIdgetUI.getLoginButton(context, 'Login')),
                 const SizedBox(
                   height: 40,
                 ),
@@ -123,7 +124,6 @@ class _LoginState extends State<Login> {
                     InkWell(
                       onTap: () {
                         Get.to(() => Register());
-                      
                       },
                       child: Text(
                         'Register here',

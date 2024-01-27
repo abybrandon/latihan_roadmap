@@ -25,9 +25,17 @@ class Dashboard extends StatelessWidget {
             const SizedBox(
               width: 5,
             ),
-            Text(
-              'Back',
-              style: TextStyle(color: Colors.white),
+            InkWell(
+              onTap: () {
+                PopupMenuItem<String>(
+                  value: 'Report',
+                  child: Text('Report'),
+                );
+              },
+              child: Text(
+                'Back',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ],
         ),

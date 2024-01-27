@@ -3,13 +3,23 @@ import 'package:belajar_github/FauziKeren/view/widget/styling/textstyle.dart';
 import 'package:belajar_github/FauziKeren/view/widget/styling/warna.dart';
 import 'package:belajar_github/FauziKeren/view/widget/widget/inputform.dart';
 import 'package:belajar_github/FauziKeren/view/widget/widget/passwordfield.dart';
+import 'package:belajar_github/sizedbox_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 // import 'package:google_fonts/google_fonts.dart';
 // import 'package:get/get.dart';
 
-class ViewLogin_F extends StatelessWidget {
-  const ViewLogin_F({super.key});
+class ViewLogin_F extends StatefulWidget {
+  ViewLogin_F({super.key});
+
+  @override
+  State<ViewLogin_F> createState() => _ViewLogin_FState();
+}
+
+class _ViewLogin_FState extends State<ViewLogin_F> {
+  bool muncul = false;
 
   @override
   Widget build(BuildContext context) {
@@ -40,14 +50,14 @@ class ViewLogin_F extends StatelessWidget {
                       ),
                       Text(
                         'Exit',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: 40,
-                ),
+                40.h.heightBox,
                 Padding(
                   padding: const EdgeInsets.fromLTRB(30, 0, 0, 25),
                   child: Text(
@@ -59,6 +69,12 @@ class ViewLogin_F extends StatelessWidget {
                     padding: const EdgeInsets.fromLTRB(23, 0, 23, 15),
                     child: inputForm(
                       hintText: 'Please Enter Your Username',
+                      muncul: muncul,
+                      fungsiGanti: () {
+                        setState(() {
+                          muncul = !muncul;
+                        });
+                      },
                     )),
                 Padding(
                     padding: const EdgeInsets.fromLTRB(23, 0, 23, 25),
@@ -92,7 +108,7 @@ class ViewLogin_F extends StatelessWidget {
                   child: InkWell(
                     onTap: () {
                       // print('AAB');
-                      Get.to(() =>RegisterView());
+                      Get.to(() => RegisterView());
                     },
                     child: RichText(
                         text: TextSpan(children: <TextSpan>[
