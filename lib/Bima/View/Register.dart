@@ -1,7 +1,6 @@
 import 'package:belajar_github/Bima/Controller/ControllerRegister.dart';
 import 'package:belajar_github/Bima/Model/ModelRegister.dart';
 import 'package:belajar_github/Bima/Style/TextStyle.dart';
-import 'package:belajar_github/Bima/View/Login.dart';
 import 'package:belajar_github/Bima/Widget/WidgetUi.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,10 +19,10 @@ class _RegisterState extends State<Register> {
   TextEditingController password = TextEditingController();
   TextEditingController conf_password = TextEditingController();
 
-    final controller = Get.put(ControllerRegister());
+  final controller = Get.put(ControllerRegister());
   @override
   Widget build(BuildContext context) {
-    email.text =  'bima@gmail.com';
+    email.text = 'bima@gmail.com';
     username.text = 'bima';
     password.text = '123456';
     conf_password.text = '123456';
@@ -100,7 +99,9 @@ class _RegisterState extends State<Register> {
                           ? Icons.visibility
                           : Icons.visibility_off),
                     ),
-                    _obscureText, 'Create Password', password),
+                    _obscureText,
+                    'Create Password',
+                    password),
                 const SizedBox(
                   height: 20,
                 ),
@@ -115,21 +116,23 @@ class _RegisterState extends State<Register> {
                           ? Icons.visibility
                           : Icons.visibility_off),
                     ),
-                    _obscureText, 'Confirm Password', conf_password),
+                    _obscureText,
+                    'Confirm Password',
+                    conf_password),
                 const SizedBox(
                   height: 20,
                 ),
                 InkWell(
-                  onTap: (){
-                      controller.Reigster(username, email, password, conf_password);
-                    Get.back();
-                    //  controller.username == username.text;
-                    //   controller.email == email.text;
-                    //   controller.password == password.text;
-                    //   controller.conf_password == conf_password.text;
-                      
-                  },
-                  child: WIdgetUI.getLoginButton(context, 'Register')),
+                    onTap: () {
+                      controller.Reigster(
+                          username, email, password, conf_password);
+                      Get.back();
+                      //  controller.username == username.text;
+                      //   controller.email == email.text;
+                      //   controller.password == password.text;
+                      //   controller.conf_password == conf_password.text;
+                    },
+                    child: WIdgetUI.getLoginButton(context, 'Register')),
                 const SizedBox(
                   height: 40,
                 ),
@@ -147,7 +150,7 @@ class _RegisterState extends State<Register> {
                     InkWell(
                       onTap: () {
                         Get.back();
-                      //Navigator.of(context).pop(MaterialPageRoute(builder: (context) => Login()));
+                        //Navigator.of(context).pop(MaterialPageRoute(builder: (context) => Login()));
                       },
                       child: Text(
                         'Login here',
