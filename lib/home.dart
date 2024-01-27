@@ -1,6 +1,5 @@
-import 'package:belajar_github/Bima/Bima.dart';
-import 'package:belajar_github/Bima/View/Dashboard/Dashboard.dart';
 import 'package:belajar_github/Bima/View/Login.dart';
+import 'package:belajar_github/rizki/v_home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +17,11 @@ class HomeView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(onPressed: () {}, child: Text('Fsadasauzi fungsi')),
-            ElevatedButton(onPressed: () {}, child: Text('Rizki fungsi')),
+            ElevatedButton(
+                onPressed: () {
+                  Get.to(() => HomeViewRizki());
+                },
+                child: Text('Rizki fungsi')),
             ElevatedButton(
                 onPressed: () {
                   Get.to(() => Login());
