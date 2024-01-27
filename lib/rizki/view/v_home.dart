@@ -1,4 +1,5 @@
-import 'package:belajar_github/rizki/view/view_login.dart';
+import 'package:belajar_github/rizki/view/v_login.dart';
+import 'package:belajar_github/rizki/view/v_register.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -25,11 +26,14 @@ class HomeView extends StatelessWidget {
               ElevatedButton(
                   child: Text("Login"),
                   onPressed: () {
-                    print("A");
                     Get.to(() => LoginView());
                   }),
               SizedBox(height: 10),
-              ElevatedButton(onPressed: () {}, child: Text("Register")),
+              ElevatedButton(
+                  onPressed: () {
+                    Get.to(() => RegisterView());
+                  },
+                  child: Text("Register")),
             ],
           ),
         ),

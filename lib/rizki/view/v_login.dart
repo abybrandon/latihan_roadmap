@@ -1,4 +1,5 @@
-import 'package:belajar_github/rizki/view/view_home.dart';
+import 'package:belajar_github/rizki/view/v_home.dart';
+import 'package:belajar_github/rizki/view/v_register.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -141,14 +142,32 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ),
                 SizedBox(height: 50),
-                Center(
-                  child: Text(
-                    "No Account? Register here",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 13,
-                      fontWeight: FontWeight.w500,
-                    ),
+                InkWell(
+                  onTap: () {
+                    Get.to(() => RegisterView());
+                  },
+                  child: Center(
+                    child: RichText(
+                        text: TextSpan(text: "No Account?  ", children: [
+                      TextSpan(
+                          text: "Register here",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              decoration: TextDecoration.underline,
+                              foreground: Paint()
+                                ..shader = LinearGradient(
+                                  colors: [
+                                    Color.fromRGBO(148, 120, 62, 1),
+                                    Color.fromARGB(243, 237, 166, 1),
+                                    Color.fromARGB(248, 250, 229, 1),
+                                    Color.fromARGB(255, 225, 190, 1),
+                                    Color.fromARGB(213, 190, 135, 1),
+                                    Color.fromARGB(248, 250, 229, 1),
+                                    Color.fromARGB(213, 190, 136, 1),
+                                  ],
+                                ).createShader(
+                                    Rect.fromLTWH(0, 100, 300.0, 100.0))))
+                    ])),
                   ),
                 ),
               ],
