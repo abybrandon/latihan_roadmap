@@ -1,7 +1,9 @@
+// ignore_for_file: unused_import
+
+import 'dart:math';
 import 'dart:ui';
 
 import 'package:belajar_github/Bima/Controller/ControllerRegister.dart';
-import 'package:belajar_github/Bima/Model/ModelRegister.dart';
 import 'package:belajar_github/Bima/Style/TextStyle.dart';
 import 'package:belajar_github/Bima/View/Register.dart';
 import 'package:belajar_github/Bima/Widget/WidgetUi.dart';
@@ -24,6 +26,14 @@ class _LoginState extends State<Login> {
   TextEditingController password = TextEditingController();
 
   bool _obscureText = true;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    email.text = 'bima@gmail.com';
+    password.text = '123456';
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, unused_import
+
 import 'dart:ffi';
 
 import 'package:belajar_github/Bima/Controller/ControllerAbout.dart';
@@ -6,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class FormAbout extends StatefulWidget {
-  FormAbout({super.key});
+  const FormAbout({super.key});
 
   @override
   State<FormAbout> createState() => _FormAboutState();

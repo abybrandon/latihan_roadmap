@@ -1,5 +1,4 @@
 import 'package:belajar_github/Bima/Controller/ControllerRegister.dart';
-import 'package:belajar_github/Bima/Model/ModelRegister.dart';
 import 'package:belajar_github/Bima/Style/TextStyle.dart';
 import 'package:belajar_github/Bima/Widget/WidgetUi.dart';
 import 'package:flutter/material.dart';
