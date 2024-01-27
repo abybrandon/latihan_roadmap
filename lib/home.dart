@@ -1,6 +1,5 @@
 import 'package:belajar_github/Bima/View/Login.dart';
 import 'package:belajar_github/rizki/v_home.dart';
-import 'package:belajar_github/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

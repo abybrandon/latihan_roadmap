@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:belajar_github/Bima/Controller/ControllerRegister.dart';
 import 'package:belajar_github/Bima/Style/TextStyle.dart';
 import 'package:belajar_github/Bima/View/Dashboard/FormAbout.dart';
