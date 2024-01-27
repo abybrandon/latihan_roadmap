@@ -22,41 +22,45 @@ class UnExpandableRecords extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.15),
-            blurRadius: 5,
-          ),
-        ],
-      ),
-      child: InkWell(
-        onTap: _data.onTap ?? () {},
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 24,
-            vertical: 20,
-          ),
-          child: Row(
-            children: [
-              Image.network(
-                _data.image,
-                height: 20,
-                width: 20,
-              ),
-              SizedBox(width: 11),
-              Text(
-                _data.title,
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: bgRed,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.15),
+              blurRadius: 5,
+            ),
+          ],
+        ),
+        child: InkWell(
+          onTap: _data.onTap ?? () {},
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 24,
+              vertical: 20,
+            ),
+            child: Row(
+              children: [
+                Image.network(
+                  _data.image,
+                  height: 30,
+                  width: 30,
+                  fit: BoxFit.cover,
                 ),
-              ),
-            ],
+                SizedBox(width: 11),
+                Text(
+                  _data.title,
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: bgRed,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
