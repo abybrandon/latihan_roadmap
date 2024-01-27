@@ -1,6 +1,7 @@
 import 'package:belajar_github/Bima/Controller/ControllerRegister.dart';
 import 'package:belajar_github/Bima/Style/TextStyle.dart';
 import 'package:belajar_github/Bima/View/Dashboard/FormAbout.dart';
+import 'package:belajar_github/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -39,14 +40,8 @@ class Dashboard extends StatelessWidget {
             ),
           ],
         ),
-        title: Text(
-          controller.modelRegister.email!,
-          style: TextStyleModif.getStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            size: 20,
-          ),
-        ),
+        title: Text(controller.modelRegister.email!,
+            style: TextStyleModif.title.copyWith(color: bgRed)),
 
         backgroundColor: Colors.transparent, // Make the AppBar transparent
         elevation: 0, // Remove shadow

@@ -5,9 +5,10 @@ import 'package:get/get.dart';
 
 import 'FauziKeren/view/v_login.dart';
 import 'aby/auth/login/view/login_view.dart';
+import 'widget/button_list.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+  HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,15 @@ class HomeView extends StatelessWidget {
                 onPressed: () {
                   Get.to(() => LoginView());
                 },
-                child: Text('Abi fungsi asdasdasdas'))
+                child: Text('Abi fungsi asdasdasdas')),
+            UnExpandableRecords(
+              data: SettingData(
+                  image:
+                      'https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D',
+                  title: 'Abi',
+                  onTap: () {},
+                  children: []),
+            ),
           ],
         ),
       ),
