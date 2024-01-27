@@ -20,7 +20,10 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       designSize: const Size(375, 812),
-      child: const GetMaterialApp(
+      child: GetMaterialApp(
+        theme: ThemeData(
+          fontFamily: 'Poppins',
+        ),
         debugShowCheckedModeBanner: false,
         home: HomeView(),
       ),

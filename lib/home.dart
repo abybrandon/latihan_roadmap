@@ -3,6 +3,7 @@ import 'package:belajar_github/rizki/v_home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'FauziKeren/view/v_login.dart';
 import 'aby/auth/login/view/login_view.dart';
 
 class HomeView extends StatelessWidget {
@@ -16,7 +17,11 @@ class HomeView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(onPressed: () {}, child: Text('Fsadasauzi fungsi')),
+            ElevatedButton(
+                onPressed: () {
+                  Get.to(() => ViewLogin_F());
+                },
+                child: Text('Fsadasauzi fungsi')),
             ElevatedButton(
                 onPressed: () {
                   Get.to(() => HomeViewRizki());

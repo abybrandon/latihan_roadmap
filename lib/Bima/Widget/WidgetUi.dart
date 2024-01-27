@@ -3,73 +3,75 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class WIdgetUI {
-  static  Widget WidgetRegisterTetxt(String hintext, TextEditingController controller){
+  static Widget WidgetRegisterTetxt(
+      String hintext, TextEditingController controller) {
     return Container(
-    padding: const EdgeInsets.only(left: 8, right: 8),
-    decoration: BoxDecoration(
-      color: const Color(0xFFFFFF).withOpacity(0.06),
-      borderRadius: BorderRadius.circular(10),
-    ),
-    child: TextFormField(
-      controller: controller,
-      decoration: InputDecoration(
-          hintText: hintext,
-          hintStyle: TextStyle(
-            fontFamily: GoogleFonts.inter().fontFamily,
-            fontSize: 13,
-            fontWeight: FontWeight.w500,
-            color: const Color(0xFFFFFF).withOpacity(0.4),
-          ),
-          enabledBorder: InputBorder.none),
-    ),
-  );
+      padding: const EdgeInsets.only(left: 8, right: 8),
+      decoration: BoxDecoration(
+        color: const Color(0xFFFFFF).withOpacity(0.06),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: TextFormField(
+        controller: controller,
+        decoration: InputDecoration(
+            hintText: hintext,
+            hintStyle: TextStyle(
+              fontFamily: GoogleFonts.inter().fontFamily,
+              fontSize: 13,
+              fontWeight: FontWeight.w500,
+              color: const Color(0xFFFFFF).withOpacity(0.4),
+            ),
+            enabledBorder: InputBorder.none),
+      ),
+    );
   }
 
-
-  static Widget Username(TextEditingController username){return Container(
-    padding: const EdgeInsets.only(left: 8, right: 8),
-    decoration: BoxDecoration(
-      color: const Color(0xFFFFFF).withOpacity(0.06),
-      borderRadius: BorderRadius.circular(10),
-    ),
-    child: TextFormField(
-      controller: username,
-      decoration: InputDecoration(
-          hintText: 'Enter Username/email ',
-          hintStyle: TextStyle(
-            fontFamily: GoogleFonts.inter().fontFamily,
-            fontSize: 13,
-            fontWeight: FontWeight.w500,
-            color: const Color(0xFFFFFF).withOpacity(0.4),
-          ),
-          enabledBorder: InputBorder.none),
-    ),
-  );
+  static Widget Username(TextEditingController username) {
+    return Container(
+      padding: const EdgeInsets.only(left: 8, right: 8),
+      decoration: BoxDecoration(
+        color: const Color(0xFFFFFF).withOpacity(0.06),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: TextFormField(
+        controller: username,
+        decoration: InputDecoration(
+            hintText: 'Enter Username/email ',
+            hintStyle: TextStyle(
+              fontFamily: GoogleFonts.inter().fontFamily,
+              fontSize: 13,
+              fontWeight: FontWeight.w500,
+              color: const Color(0xFFFFFF).withOpacity(0.4),
+            ),
+            enabledBorder: InputBorder.none),
+      ),
+    );
   }
 
   // ignore: non_constant_identifier_names
-  static  Widget Password(Widget eye, bool eye2, String hintext, TextEditingController controller) {
-  return  Container(
-    padding: const EdgeInsets.only(left: 8, right: 8),
-    decoration: BoxDecoration(
-      color: const Color(0xFFFFFF).withOpacity(0.06),
-      borderRadius: BorderRadius.circular(10),
-    ),
-    child: TextFormField(
-      controller: controller,
-      obscureText: eye2,
-      decoration: InputDecoration(
-        suffixIcon:eye,
-          hintText: hintext,
-          hintStyle: TextStyle(
-            fontFamily: GoogleFonts.inter().fontFamily,
-            fontSize: 13,
-            fontWeight: FontWeight.w500,
-            color: const Color(0xFFFFFF).withOpacity(0.4),
-          ),
-          enabledBorder: InputBorder.none),
-    ),
-  );
+  static Widget Password(
+      Widget eye, bool eye2, String hintext, TextEditingController controller) {
+    return Container(
+      padding: const EdgeInsets.only(left: 8, right: 8),
+      decoration: BoxDecoration(
+        color: const Color(0xFFFFFF).withOpacity(0.06),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: TextFormField(
+        controller: controller,
+        obscureText: eye2,
+        decoration: InputDecoration(
+            suffixIcon: eye,
+            hintText: hintext,
+            hintStyle: TextStyle(
+              fontFamily: GoogleFonts.inter().fontFamily,
+              fontSize: 13,
+              fontWeight: FontWeight.w500,
+              color: const Color(0xFFFFFF).withOpacity(0.4),
+            ),
+            enabledBorder: InputBorder.none),
+      ),
+    );
   }
 
   static Widget getLoginButton(BuildContext context, String textbtn) {
@@ -78,7 +80,7 @@ class WIdgetUI {
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
-            boxShadow: [
+        boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
             spreadRadius: 1,
