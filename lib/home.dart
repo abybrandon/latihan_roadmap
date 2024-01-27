@@ -1,5 +1,6 @@
 import 'package:belajar_github/Bima/View/Login.dart';
 import 'package:belajar_github/rizki/v_home.dart';
+import 'package:belajar_github/thoha/main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -29,9 +30,14 @@ class HomeView extends StatelessWidget {
                 child: Text('Bima  dsaas fungsiasdas')),
             ElevatedButton(
                 onPressed: () {
+                  Get.to(() => LoginPage());
+                },
+                child: Text('Thoha fungsi')),
+            ElevatedButton(
+                onPressed: () {
                   Get.to(() => LoginView());
                 },
-                child: Text('Abi fungsi asdasdasdas'))
+                child: Text('Abi fungsi gausah'))
           ],
         ),
       ),
