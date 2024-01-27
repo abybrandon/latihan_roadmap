@@ -1,4 +1,3 @@
-
 import 'package:belajar_github/Bima/Bima.dart';
 import 'package:belajar_github/Bima/View/Dashboard/Dashboard.dart';
 import 'package:belajar_github/Bima/View/Login.dart';
@@ -22,7 +21,7 @@ class HomeView extends StatelessWidget {
             ElevatedButton(onPressed: () {}, child: Text('Rizki fungsi')),
             ElevatedButton(
                 onPressed: () {
-                  Get.to(() => BimaWidget());
+                  Get.to(() => Login());
                 },
                 child: Text('Bima  dsaas fungsiasdas')),
             ElevatedButton(

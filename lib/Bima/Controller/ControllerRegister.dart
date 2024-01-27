@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 class ControllerRegister extends GetxController {
   ModelRegister modelRegister = ModelRegister();
   RxBool detailAbout = false.obs;
+
   void Reigster(TextEditingController username, TextEditingController email,
       TextEditingController password, TextEditingController conf_password) {
     modelRegister = ModelRegister(
@@ -16,14 +17,15 @@ class ControllerRegister extends GetxController {
     print('ini controller ${modelRegister.username}');
   }
 
-  void Login(TextEditingController username, TextEditingController password, BuildContext context) {
+  void Login(TextEditingController username, TextEditingController password,
+      BuildContext context) {
     if (username.text == modelRegister.email &&
         password.text == modelRegister.password) {
       //Get.to(() => Dashboard());
-      Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => Dashboard()));
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => Dashboard()));
       print('ini controller ${modelRegister.username}');
-    }else{
+    } else {
       Get.snackbar('Gagal', 'Username atau password salah');
     }
   }
@@ -31,5 +33,4 @@ class ControllerRegister extends GetxController {
   void toggleDetailAbout() {
     detailAbout.value = !detailAbout.value;
   }
-
 }
