@@ -2,14 +2,16 @@ import 'package:belajar_github/FauziKeren/view/widget/styling/textstyle.dart';
 import 'package:flutter/material.dart';
 
 class inputForm extends StatelessWidget {
-  inputForm({required this.hintText, this.muncul = false, this.fungsiGanti});
   final String hintText;
   final bool? muncul;
   final VoidCallback? fungsiGanti;
+  final TextEditingController controller;
+  inputForm({required this.hintText, this.muncul = false, this.fungsiGanti, required this.controller, });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       decoration: InputDecoration(
           hintText: hintText,
           hintStyle: TextStyleModif.hint_text,

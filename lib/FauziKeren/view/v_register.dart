@@ -1,3 +1,4 @@
+import 'package:belajar_github/FauziKeren/controller/register_controller.dart';
 import 'package:belajar_github/FauziKeren/view/v_login.dart';
 import 'package:belajar_github/FauziKeren/view/widget/styling/textstyle.dart';
 import 'package:belajar_github/FauziKeren/view/widget/styling/warna.dart';
@@ -6,14 +7,15 @@ import 'package:belajar_github/FauziKeren/view/widget/widget/passwordfield.dart'
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class RegisterView extends StatefulWidget {
-  const RegisterView({super.key});
+class RegisterView extends StatelessWidget {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController passWordController = TextEditingController();
+  final TextEditingController passConfController = TextEditingController();
+  final RegisterController registerController = Get.put(RegisterController());
 
-  @override
-  State<RegisterView> createState() => _RegisterViewState();
-}
+  RegisterView({super.key});
 
-class _RegisterViewState extends State<RegisterView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,28 +62,45 @@ class _RegisterViewState extends State<RegisterView> {
               Padding(
                   padding: const EdgeInsets.fromLTRB(23, 0, 23, 15),
                   child: inputForm(
+                    controller: emailController,
                     hintText: 'Enter email',
                   )),
               Padding(
                   padding: const EdgeInsets.fromLTRB(23, 0, 23, 15),
                   child: inputForm(
+                    controller: usernameController,
                     hintText: 'Create Username',
                   )),
               Padding(
                   padding: const EdgeInsets.fromLTRB(23, 0, 23, 15),
                   child: PasswordField(
+                    controller: passWordController,
                     hintText: 'Create Password',
                   )),
               Padding(
                   padding: const EdgeInsets.fromLTRB(23, 0, 23, 15),
                   child: PasswordField(
+                    controller: passConfController,
                     hintText: 'Confirm Password',
                   )),
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 35),
                 child: InkWell(
                   onTap: () {
-                    //  Get.to('aa');
+                    // Get the values from controllers
+                    String email = registerController.emailController.text;
+                    String username =
+                        registerController.usernameController.text;
+                    String password =
+                        registerController.passWordController.text;
+                    String confirmPassword =
+                        registerController.passConfController.text;
+
+                    // Call registerUser from RegisterController
+                    registerController.registerUser(
+                        email, username, password, confirmPassword);
+                        
+                    registerController.loadLocalData();
                   },
                   child: Container(
                     width: 331,

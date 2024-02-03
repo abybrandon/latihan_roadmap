@@ -1,3 +1,4 @@
+import 'package:belajar_github/Bima/View/Login.dart';
 import 'package:belajar_github/FauziKeren/view/v_register.dart';
 import 'package:belajar_github/FauziKeren/view/widget/styling/textstyle.dart';
 import 'package:belajar_github/FauziKeren/view/widget/styling/warna.dart';
@@ -20,6 +21,8 @@ class ViewLogin_F extends StatefulWidget {
 
 class _ViewLogin_FState extends State<ViewLogin_F> {
   bool muncul = false;
+    final TextEditingController usernameController = TextEditingController();
+  final TextEditingController passWordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -74,11 +77,11 @@ class _ViewLogin_FState extends State<ViewLogin_F> {
                         setState(() {
                           muncul = !muncul;
                         });
-                      },
+                      }, controller: usernameController,
                     )),
                 Padding(
                     padding: const EdgeInsets.fromLTRB(23, 0, 23, 25),
-                    child: PasswordField(hintText: "Enter Your Password")),
+                    child: PasswordField(hintText: "Enter Your Password", controller: passWordController), ),
                 // SizedBox(height: ,)
                 Padding(
                   padding: const EdgeInsets.fromLTRB(30, 0, 30, 35),

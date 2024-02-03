@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 class PasswordField extends StatefulWidget {
   final String hintText;
   // final String labelText;
+  final TextEditingController controller;
 
-  PasswordField({required this.hintText});
+  PasswordField({required this.hintText, required this.controller});
 
   @override
   _PasswordFieldState createState() => _PasswordFieldState();
@@ -17,6 +18,7 @@ class _PasswordFieldState extends State<PasswordField> {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: widget.controller,
       obscureText: _obscureText,
       style: TextStyle(color: Colors.white),
       decoration: InputDecoration(
