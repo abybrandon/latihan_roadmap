@@ -1,4 +1,6 @@
-import 'package:belajar_github/rizki/view/home_view.dart';
+// ignore_for_file: unnecessary_const
+
+import 'package:belajar_github/rizki/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,22 +18,22 @@ class _ProfileDetailsState extends State<ProfileDetails> {
       resizeToAvoidBottomInset: false,
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [
+        decoration: const BoxDecoration(
+            gradient: const LinearGradient(colors: [
           Color.fromRGBO(9, 20, 26, 1),
           Color.fromRGBO(13, 29, 35, 1),
           Color.fromRGBO(31, 66, 71, 1),
         ], begin: Alignment.bottomLeft, end: Alignment.topRight)),
         child: Padding(
-            padding: EdgeInsets.all(14),
+            padding: const EdgeInsets.all(14),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 InkWell(
-                  child: Row(
+                  child: const Row(
                     children: [
                       Icon(
                         Icons.chevron_left,
@@ -48,7 +50,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                     ],
                   ),
                   onTap: () {
-                    Get.to(() => HomeView());
+                    Get.to(() => const HomeView());
                   },
                 ),
               ],

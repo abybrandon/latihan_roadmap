@@ -1,6 +1,6 @@
-import 'package:belajar_github/rizki/view/login_view.dart';
-import 'package:belajar_github/rizki/view/profile_details_view.dart';
-import 'package:belajar_github/rizki/view/register_view.dart';
+import 'package:belajar_github/rizki/views/login_view.dart';
+import 'package:belajar_github/rizki/views/profile_details_view.dart';
+import 'package:belajar_github/rizki/views/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,7 +11,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.bottomLeft,
                 end: Alignment.topRight,
@@ -25,22 +25,22 @@ class HomeView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
-                  child: Text("Login"),
+                  child: const Text("Login"),
                   onPressed: () {
-                    Get.to(() => LoginView());
+                    Get.to(() => const LoginView());
                   }),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ElevatedButton(
                   onPressed: () {
-                    Get.to(() => RegisterView());
+                    Get.to(() => const RegisterView());
                   },
-                  child: Text("Register")),
-              SizedBox(height: 10),
+                  child: const Text("Register")),
+              const SizedBox(height: 10),
               ElevatedButton(
                   onPressed: () {
-                    Get.to(() => ProfileDetails());
+                    Get.to(() => const ProfileDetails());
                   },
-                  child: Text("Profile")),
+                  child: const Text("Profile")),
             ],
           ),
         ),

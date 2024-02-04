@@ -1,5 +1,7 @@
-import 'package:belajar_github/rizki/view/v_home.dart';
-import 'package:belajar_github/rizki/view/v_register.dart';
+import 'package:belajar_github/rizki/controllers/user_controller.dart';
+import 'package:belajar_github/rizki/models/user.dart';
+import 'package:belajar_github/rizki/views/home_view.dart';
+import 'package:belajar_github/rizki/views/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,11 +15,16 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
+    UserController userController = Get.put(UserController(), permanent: true);
+
+    TextEditingController usernameController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
+
     return Scaffold(
         resizeToAvoidBottomInset: false,
         body: Container(
           width: double.infinity,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.bottomLeft,
                   end: Alignment.topRight,
@@ -31,11 +38,11 @@ class _LoginViewState extends State<LoginView> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 InkWell(
-                  child: Row(
+                  child: const Row(
                     children: [
                       Icon(
                         Icons.chevron_left,
@@ -52,13 +59,13 @@ class _LoginViewState extends State<LoginView> {
                     ],
                   ),
                   onTap: () {
-                    Get.to(() => HomeView());
+                    Get.to(() => const HomeView());
                   },
                 ),
-                SizedBox(height: 70),
+                const SizedBox(height: 70),
                 Container(
-                  margin: EdgeInsets.fromLTRB(35, 0, 0, 0),
-                  child: Text(
+                  margin: const EdgeInsets.fromLTRB(35, 0, 0, 0),
+                  child: const Text(
                     "Login",
                     style: TextStyle(
                       color: Colors.white,
@@ -67,17 +74,18 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                   child: Container(
                     height: 51,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(9),
-                        color: Color.fromRGBO(255, 255, 255, 0.06)),
+                        color: const Color.fromRGBO(255, 255, 255, 0.06)),
                     child: TextField(
-                      style: TextStyle(color: Colors.white),
-                      decoration: InputDecoration(
+                      controller: usernameController,
+                      style: const TextStyle(color: Colors.white),
+                      decoration: const InputDecoration(
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.fromLTRB(15, 0, 10, 0),
                           hintText: "Enter Username/Email",
@@ -88,21 +96,22 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                   child: Container(
                     height: 51,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(9),
-                        color: Color.fromRGBO(255, 255, 255, 0.06)),
+                        color: const Color.fromRGBO(255, 255, 255, 0.06)),
                     child: TextField(
-                      style: TextStyle(
+                      controller: passwordController,
+                      style: const TextStyle(
                         color: Colors.white,
                       ),
                       obscureText: true,
                       obscuringCharacter: "*",
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.fromLTRB(15, 0, 10, 0),
                           hintText: "Enter Password",
@@ -113,14 +122,14 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                             begin: Alignment.bottomLeft,
                             end: Alignment.topRight,
                             colors: [
@@ -131,8 +140,30 @@ class _LoginViewState extends State<LoginView> {
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.transparent,
                             shadowColor: Colors.transparent),
-                        onPressed: () {},
-                        child: Text(
+                        onPressed: () {
+                          final String username = usernameController.text;
+                          final String password = passwordController.text;
+
+                          userController.addUser(User(
+                              email: username,
+                              username: username,
+                              password: password,
+                              cPassword: password));
+
+                          print(userController
+                              .UserList[userController.UserList.length - 1]
+                              .email);
+                          print(userController
+                              .UserList[userController.UserList.length - 1]
+                              .username);
+                          print(userController
+                              .UserList[userController.UserList.length - 1]
+                              .password);
+                          print(userController
+                              .UserList[userController.UserList.length - 1]
+                              .cPassword);
+                        },
+                        child: const Text(
                           "Login",
                           style: TextStyle(
                               color: Colors.white,
@@ -141,10 +172,10 @@ class _LoginViewState extends State<LoginView> {
                         )),
                   ),
                 ),
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
                 InkWell(
                   onTap: () {
-                    Get.to(() => RegisterView());
+                    Get.to(() => const RegisterView());
                   },
                   child: Center(
                     child: RichText(
@@ -155,7 +186,7 @@ class _LoginViewState extends State<LoginView> {
                               fontWeight: FontWeight.w500,
                               decoration: TextDecoration.underline,
                               foreground: Paint()
-                                ..shader = LinearGradient(
+                                ..shader = const LinearGradient(
                                   colors: [
                                     Color.fromRGBO(148, 120, 62, 1),
                                     Color.fromARGB(243, 237, 166, 1),
@@ -166,7 +197,7 @@ class _LoginViewState extends State<LoginView> {
                                     Color.fromARGB(213, 190, 136, 1),
                                   ],
                                 ).createShader(
-                                    Rect.fromLTWH(0, 100, 300.0, 100.0))))
+                                    const Rect.fromLTWH(0, 100, 300.0, 100.0))))
                     ])),
                   ),
                 ),
