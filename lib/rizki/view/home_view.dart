@@ -1,5 +1,6 @@
-import 'package:belajar_github/rizki/view/v_login.dart';
-import 'package:belajar_github/rizki/view/v_register.dart';
+import 'package:belajar_github/rizki/view/login_view.dart';
+import 'package:belajar_github/rizki/view/profile_details_view.dart';
+import 'package:belajar_github/rizki/view/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -34,6 +35,12 @@ class HomeView extends StatelessWidget {
                     Get.to(() => RegisterView());
                   },
                   child: Text("Register")),
+              SizedBox(height: 10),
+              ElevatedButton(
+                  onPressed: () {
+                    Get.to(() => ProfileDetails());
+                  },
+                  child: Text("Profile")),
             ],
           ),
         ),

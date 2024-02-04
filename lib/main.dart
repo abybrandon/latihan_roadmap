@@ -1,4 +1,4 @@
-import 'package:belajar_github/rizki/view/v_home.dart';
+import 'package:belajar_github/rizki/view/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
