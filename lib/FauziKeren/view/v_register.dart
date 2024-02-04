@@ -99,8 +99,8 @@ class RegisterView extends StatelessWidget {
                     // Call registerUser from RegisterController
                     registerController.registerUser(
                         email, username, password, confirmPassword);
-                        
-                    registerController.loadLocalData();
+
+                    // registerController.loadLocalData();
                   },
                   child: Container(
                     width: 331,
