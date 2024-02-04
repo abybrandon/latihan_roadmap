@@ -1,5 +1,4 @@
 import 'package:belajar_github/rizki/controllers/user_controller.dart';
-import 'package:belajar_github/rizki/models/user.dart';
 import 'package:belajar_github/rizki/views/home_view.dart';
 import 'package:belajar_github/rizki/views/register_view.dart';
 import 'package:flutter/material.dart';
@@ -16,9 +15,6 @@ class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     UserController userController = Get.put(UserController(), permanent: true);
-
-    TextEditingController usernameController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
 
     return Scaffold(
         resizeToAvoidBottomInset: false,
@@ -83,7 +79,7 @@ class _LoginViewState extends State<LoginView> {
                         borderRadius: BorderRadius.circular(9),
                         color: const Color.fromRGBO(255, 255, 255, 0.06)),
                     child: TextField(
-                      controller: usernameController,
+                      controller: userController.usernameLoginController,
                       style: const TextStyle(color: Colors.white),
                       decoration: const InputDecoration(
                           border: InputBorder.none,
@@ -105,7 +101,7 @@ class _LoginViewState extends State<LoginView> {
                         borderRadius: BorderRadius.circular(9),
                         color: const Color.fromRGBO(255, 255, 255, 0.06)),
                     child: TextField(
-                      controller: passwordController,
+                      controller: userController.passwordLoginController,
                       style: const TextStyle(
                         color: Colors.white,
                       ),
@@ -141,27 +137,13 @@ class _LoginViewState extends State<LoginView> {
                             backgroundColor: Colors.transparent,
                             shadowColor: Colors.transparent),
                         onPressed: () {
-                          final String username = usernameController.text;
-                          final String password = passwordController.text;
+                          userController.login();
+                          //TODO : LOGIN CONTROLLER
 
-                          userController.addUser(User(
-                              email: username,
-                              username: username,
-                              password: password,
-                              cPassword: password));
+                          // final String username = usernameController.text;
+                          // final String password = passwordController.text;
 
-                          print(userController
-                              .UserList[userController.UserList.length - 1]
-                              .email);
-                          print(userController
-                              .UserList[userController.UserList.length - 1]
-                              .username);
-                          print(userController
-                              .UserList[userController.UserList.length - 1]
-                              .password);
-                          print(userController
-                              .UserList[userController.UserList.length - 1]
-                              .cPassword);
+                          // Get.to(() => const ProfileDetails());
                         },
                         child: const Text(
                           "Login",

@@ -1,7 +1,6 @@
-// ignore_for_file: unnecessary_const
+import 'dart:developer';
 
 import 'package:belajar_github/rizki/controllers/user_controller.dart';
-import 'package:belajar_github/rizki/models/user.dart';
 import 'package:belajar_github/rizki/views/home_view.dart';
 import 'package:belajar_github/rizki/views/login_view.dart';
 import 'package:flutter/material.dart';
@@ -19,17 +18,12 @@ class _RegisterViewState extends State<RegisterView> {
   Widget build(BuildContext context) {
     UserController userController = Get.put(UserController(), permanent: true);
 
-    TextEditingController emailController = TextEditingController();
-    TextEditingController usernameController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
-    TextEditingController cPasswordController = TextEditingController();
-
     return Scaffold(
         resizeToAvoidBottomInset: false,
         body: Container(
           width: double.infinity,
           decoration: const BoxDecoration(
-              gradient: const LinearGradient(
+              gradient: LinearGradient(
                   begin: Alignment.bottomLeft,
                   end: Alignment.topRight,
                   colors: [
@@ -87,7 +81,7 @@ class _RegisterViewState extends State<RegisterView> {
                         borderRadius: BorderRadius.circular(9),
                         color: const Color.fromRGBO(255, 255, 255, 0.06)),
                     child: TextField(
-                      controller: emailController,
+                      controller: userController.emailController,
                       style: const TextStyle(color: Colors.white),
                       decoration: const InputDecoration(
                           border: InputBorder.none,
@@ -109,7 +103,7 @@ class _RegisterViewState extends State<RegisterView> {
                         borderRadius: BorderRadius.circular(9),
                         color: const Color.fromRGBO(255, 255, 255, 0.06)),
                     child: TextField(
-                      controller: usernameController,
+                      controller: userController.usernameController,
                       style: const TextStyle(color: Colors.white),
                       decoration: const InputDecoration(
                           border: InputBorder.none,
@@ -131,7 +125,7 @@ class _RegisterViewState extends State<RegisterView> {
                         borderRadius: BorderRadius.circular(9),
                         color: const Color.fromRGBO(255, 255, 255, 0.06)),
                     child: TextField(
-                      controller: passwordController,
+                      controller: userController.passwordController,
                       style: const TextStyle(
                         color: Colors.white,
                       ),
@@ -157,7 +151,7 @@ class _RegisterViewState extends State<RegisterView> {
                         borderRadius: BorderRadius.circular(9),
                         color: const Color.fromRGBO(255, 255, 255, 0.06)),
                     child: TextField(
-                      controller: cPasswordController,
+                      controller: userController.cPasswordController,
                       style: const TextStyle(
                         color: Colors.white,
                       ),
@@ -193,29 +187,10 @@ class _RegisterViewState extends State<RegisterView> {
                             backgroundColor: Colors.transparent,
                             shadowColor: Colors.transparent),
                         onPressed: () {
-                          final String email = emailController.text;
-                          final String username = usernameController.text;
-                          final String password = passwordController.text;
-                          final String cPassword = cPasswordController.text;
+                          userController.register();
 
-                          userController.addUser(User(
-                              email: email,
-                              username: username,
-                              password: password,
-                              cPassword: cPassword));
-
-                          print(userController
-                              .UserList[userController.UserList.length - 1]
-                              .email);
-                          print(userController
-                              .UserList[userController.UserList.length - 1]
-                              .username);
-                          print(userController
-                              .UserList[userController.UserList.length - 1]
-                              .password);
-                          print(userController
-                              .UserList[userController.UserList.length - 1]
-                              .cPassword);
+                          log(userController.userList.last.toString());
+                          // log(userController.UserList.last);
                         },
                         child: const Text(
                           "Register",
